@@ -2,11 +2,7 @@
 
 ![Nuestra Señora de Guadalupe](https://dnielibarra.github.io/catequesis-oraciones/guadalupe.png =100x50)
 
-<img 
-  src="https://dnielibarra.github.io/catequesis-oraciones/guadalupe.png"
-  sizes="100px, 110px"
-  alt="Descripción de la imagen"
->
+<img src="https://dnielibarra.github.io/catequesis-oraciones/guadalupe.png" sizes="100px, 110px" alt="Descripción de la imagen">
 
 Con las oraciones nos comunicamos con Dios
 
