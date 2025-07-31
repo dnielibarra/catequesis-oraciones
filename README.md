@@ -1,7 +1,7 @@
 <head>
 <meta property="og:title" content="Oraciones" />
 <meta property="og:description" content="Con las oraciones nos comunicamos con Dios" />
-<meta property="og:image" content="https://dnielibarra.github.io/catequesis-oraciones/guadalupe200.png" />
+<meta property="og:image" content="https://dnielibarra.github.io/catequesis-oraciones/guadalupe200.jpg" />
 <meta property="og:url" content="https://dnielibarra.github.io/catequesis-oraciones/" />
 <meta property="og:type" content="website" />
 </head>
