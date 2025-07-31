@@ -1,8 +1,6 @@
 # catequesis-oraciones
 
-![Nuestra Señora de Guadalupe](https://dnielibarra.github.io/catequesis-oraciones/guadalupe.png)
-
-<img src="https://dnielibarra.github.io/catequesis-oraciones/guadalupe.png" width="20%">
+<img src="https://dnielibarra.github.io/catequesis-oraciones/guadalupe.png" width="10%">
 
 Con las oraciones nos comunicamos con Dios
 
