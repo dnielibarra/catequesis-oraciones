@@ -9,7 +9,7 @@
 
 # catequesis-oraciones
 
-<img src="https://dnielibarra.github.io/catequesis-oraciones/guadalupe.png" width="10%">
+<img src="https://dnielibarra.github.io/catequesis-oraciones/guadalupecompartir.png">
 
 Con las oraciones nos comunicamos con Dios
 
