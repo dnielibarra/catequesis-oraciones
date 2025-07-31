@@ -1,3 +1,12 @@
+<head>
+<meta property="og:title" content="Título de tu página" />
+<meta property="og:description" content="Descripción breve de tu página" />
+<meta property="og:image" content="https://tudominio.com/imagen.jpg" />
+<meta property="og:url" content="https://tudominio.com" />
+<meta property="og:type" content="website" />
+</head>
+
+
 # catequesis-oraciones
 
 <img src="https://dnielibarra.github.io/catequesis-oraciones/guadalupe.png" width="10%">
