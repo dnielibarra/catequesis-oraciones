@@ -1,6 +1,6 @@
 # catequesis-oraciones
 
-![Nuestra Señora de Guadalupe](https://example.com/logo.png)
+![Nuestra Señora de Guadalupe](https://dnielibarra.github.io/catequesis-oraciones/guadalupe.png)
 
 Con las oraciones nos comunicamos con Dios
 
