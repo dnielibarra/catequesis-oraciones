@@ -1,3 +1,5 @@
+// script.js
+
 const oraciones = {
   cruz: "En el nombre del Padre, del Hijo y del Espíritu Santo. Amén.",
 
