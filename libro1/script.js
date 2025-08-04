@@ -231,4 +231,4 @@ enlacesMenu.forEach(enlace => {
       seccionMostrada.style.display = 'block';
     }
   });
-});
+
