@@ -168,12 +168,11 @@ No permitas, Señor, que jamás me aparte de Ti. Amén.`,
 6. Envidia
 7. Pereza`,
 
-  confesion: `1. Examen de conciencia
-2. Dolor de los pecados
-3. Propósito de enmienda
-4. Confesión de los pecados al sacerdote
-5. Cumplir la penitencia`
-};
+  confes...
+    }
+  ]
+}
+
 
 // script.js
 
