@@ -202,3 +202,26 @@ window.addEventListener('click', e => {
     modal.style.display = 'none';
   }
 });
+
+// Mostrar solo una sección de libro al hacer clic en el menú
+const enlacesMenu = document.querySelectorAll('nav.menu a');
+const secciones = document.querySelectorAll('.libro-section');
+
+// Mostrar el primer libro por defecto (puedes cambiarlo)
+document.getElementById('libro1').classList.add('activo');
+
+// Agrega listeners a los links del menú
+enlacesMenu.forEach(enlace => {
+  enlace.addEventListener('click', e => {
+    e.preventDefault();
+    const objetivo = enlace.getAttribute('href').substring(1);
+
+    secciones.forEach(sec => sec.classList.remove('activo'));
+
+    const seccionMostrada = document.getElementById(objetivo);
+    if (seccionMostrada) {
+      seccionMostrada.classList.add('activo');
+    }
+  });
+});
+
