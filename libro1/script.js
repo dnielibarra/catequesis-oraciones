@@ -1,5 +1,3 @@
-// script.js
-
 const oraciones = {
   cruz: "En el nombre del Padre, del Hijo y del Espíritu Santo. Amén.",
 
@@ -168,67 +166,25 @@ No permitas, Señor, que jamás me aparte de Ti. Amén.`,
 6. Envidia
 7. Pereza`,
 
-  conf...
+  confes: `1. Examen de conciencia: Recordar los pecados cometidos desde la última confesión.
+2. Dolor de los pecados: Arrepentirse sinceramente de haber ofendido a Dios.
+3. Propósito de enmienda: Tener el firme propósito de no volver a pecar.
+4. Confesión de los pecados al sacerdote: Decir todos los pecados mortales en número y especie.
+5. Cumplir la penitencia: Realizar la penitencia que el sacerdote indique.`
+};
 
-    }
-  ]
-}
-
-
-// script.js
-
-
-const botones = document.querySelectorAll('.oracion-btn');
-const modal = document.getElementById('modal');
-const modalTitulo = document.getElementById('modal-titulo');
-const modalTexto = document.getElementById('modal-texto');
-const cerrar = document.querySelector('.close');
-
-// Mostrar oración en modal
-botones.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const key = btn.getAttribute('data-key');
-    const texto = oraciones[key];
-    if (texto) {
-      modalTitulo.textContent = btn.textContent;
-      modalTexto.textContent = texto;
-      modal.style.display = 'block';
-    }
+// Mostrar el modal al hacer clic
+document.querySelectorAll(".oracion-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const key = btn.getAttribute("data-key");
+    const texto = oraciones[key] || "Oración no encontrada";
+    document.getElementById("modal-titulo").textContent = btn.textContent;
+    document.getElementById("modal-texto").textContent = texto;
+    document.getElementById("modal").classList.add("show");
   });
 });
 
-cerrar.addEventListener('click', () => {
-  modal.style.display = 'none';
+// Cerrar modal
+document.querySelector(".close").addEventListener("click", () => {
+  document.getElementById("modal").classList.remove("show");
 });
-
-window.addEventListener('click', e => {
-  if (e.target == modal) {
-    modal.style.display = 'none';
-  }
-});
-
-// Mostrar solo una sección de libro al hacer clic en el menú
-const enlacesMenu = document.querySelectorAll('nav.menu a');
-const secciones = document.querySelectorAll('.libro-section');
-
-// Ocultar todos los libros al inicio
-secciones.forEach(sec => sec.style.display = 'none');
-
-// Mostrar el primer libro por defecto
-const primerLibro = document.getElementById('libro1');
-if (primerLibro) primerLibro.style.display = 'block';
-
-// Evento para cambiar de libro
-enlacesMenu.forEach(enlace => {
-  enlace.addEventListener('click', e => {
-    e.preventDefault();
-    const objetivo = enlace.getAttribute('href').substring(1);
-
-    secciones.forEach(sec => sec.style.display = 'none');
-
-    const seccionMostrada = document.getElementById(objetivo);
-    if (seccionMostrada) {
-      seccionMostrada.style.display = 'block';
-    }
-  });
-
