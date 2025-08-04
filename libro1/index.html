@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oraciones del Catecismo Libro 1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="menu">
+    <a href="#libro1">Libro 1</a>
+    <a href="#">Libro 2</a>
+    <a href="#">Libro 3</a>
+    <a href="#">Libro 4</a>
+    <a href="#">Libro 5</a>
+    <a href="#">Libro 6</a>
+    <a href="#">Libro 7</a>
+    <a href="#">Libro 8</a>
+    <a href="#">Libro 9</a>
+    <a href="#">Libro 10</a>
+  </nav>
+
+  <section id="libro1">
+    <h2>Libro 1: Oraciones Básicas</h2>
+    <ul>
+      <li><div class="oracion-btn" data-key="cruz">✝️ Señal de la Cruz</div></li>
+      <li><div class="oracion-btn" data-key="padrenuestro">🙏 Padre Nuestro</div></li>
+      <li><div class="oracion-btn" data-key="angel">😇 Ángel de la Guarda</div></li>
+    </ul>
+  </section>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modal-titulo"></h3>
+      <div class="oracion-texto" id="modal-texto"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
