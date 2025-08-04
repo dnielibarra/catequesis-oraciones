@@ -175,12 +175,16 @@ No permitas, Señor, que jamás me aparte de Ti. Amén.`,
 5. Cumplir la penitencia`
 };
 
+// script.js
+
+
 const botones = document.querySelectorAll('.oracion-btn');
 const modal = document.getElementById('modal');
 const modalTitulo = document.getElementById('modal-titulo');
 const modalTexto = document.getElementById('modal-texto');
 const cerrar = document.querySelector('.close');
 
+// Mostrar oración en modal
 botones.forEach(btn => {
   btn.addEventListener('click', () => {
     const key = btn.getAttribute('data-key');
@@ -207,20 +211,24 @@ window.addEventListener('click', e => {
 const enlacesMenu = document.querySelectorAll('nav.menu a');
 const secciones = document.querySelectorAll('.libro-section');
 
-// Mostrar el primer libro por defecto (puedes cambiarlo)
-document.getElementById('libro1').classList.add('activo');
+// Ocultar todos los libros al inicio
+secciones.forEach(sec => sec.style.display = 'none');
 
-// Agrega listeners a los links del menú
+// Mostrar el primer libro por defecto
+const primerLibro = document.getElementById('libro1');
+if (primerLibro) primerLibro.style.display = 'block';
+
+// Evento para cambiar de libro
 enlacesMenu.forEach(enlace => {
   enlace.addEventListener('click', e => {
     e.preventDefault();
     const objetivo = enlace.getAttribute('href').substring(1);
 
-    secciones.forEach(sec => sec.classList.remove('activo'));
+    secciones.forEach(sec => sec.style.display = 'none');
 
     const seccionMostrada = document.getElementById(objetivo);
     if (seccionMostrada) {
-      seccionMostrada.classList.add('activo');
+      seccionMostrada.style.display = 'block';
     }
   });
 });
