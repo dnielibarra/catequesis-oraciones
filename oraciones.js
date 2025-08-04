@@ -31,7 +31,7 @@ const oraciones = {
   },
   consagracion: {
     titulo: "Consagración a la Virgen",
-    texto: "Oh Señora mía, oh Madre mía,\nyo me ofrezco enteramente a ti;\ny en prueba de mi filial afecto\nte consagro en este día,\nmis ojos, mis oídos, mi lengua y mi corazón;\nen una palabra, todo mi ser.\nYa que soy todo tuyo,\no me dejes, Madre mía. Amén."
+    texto: "Oh Señora mía, oh Madre mía,\nyo me ofrezco enteramente a ti;\ny en prueba de mi filial afecto\nte consagro en este día,\nmis ojos, mis oídos, mi lengua y mi corazón;\nen una palabra, todo mi ser.\nYa que soy todo tuyo,\nno me dejes, Madre mía. Amén."
   },
   actocorto: {
     titulo: "Acto de Contrición (corto)",
@@ -44,8 +44,7 @@ const oraciones = {
   amparo: {
     titulo: "Bajo tu Amparo",
     texto: "Bajo tu amparo nos acogemos,\nSanta Madre de Dios;\nno deseches las súplicas que te dirigimos\nen nuestras necesidades,\nsino líbranos siempre de todo peligro,\noh Virgen gloriosa y bendita. Amén."
-  },
-  // El resto de oraciones faltantes se pueden continuar aquí...
+  }
 };
 
 function abrirModal(clave) {
@@ -99,3 +98,24 @@ window.onclick = function (event) {
   const modal = document.getElementById("modal");
   if (event.target === modal) cerrarModal();
 };
+
+// Mostrar solo un libro a la vez
+const menuLinks = document.querySelectorAll("nav.menu a");
+const secciones = document.querySelectorAll("section");
+
+menuLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    secciones.forEach(sec => {
+      sec.style.display = sec.id === targetId ? "block" : "none";
+    });
+  });
+});
+
+// Mostrar solo la primera sección al inicio
+window.addEventListener("DOMContentLoaded", () => {
+  secciones.forEach((sec, i) => {
+    sec.style.display = i === 0 ? "block" : "none";
+  });
+});
