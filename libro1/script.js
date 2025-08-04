@@ -168,11 +168,7 @@ No permitas, Señor, que jamás me aparte de Ti. Amén.`,
 6. Envidia
 7. Pereza`,
 
-  confesion: `1. Examen de conciencia: Recordar los pecados cometidos desde la última confesión.
-2. Dolor de los pecados: Arrepentirse sinceramente de haber ofendido a Dios.
-3. Propósito de enmienda: Tener el firme propósito de no volver a pecar.
-4. Confesión de los pecados al sacerdote: Decir todos los pecados mortales en número y especie.
-5. Cumplir la penitencia: Realizar la penitencia que el sacerdote indique.`,
+  conf...
 
     }
   ]
