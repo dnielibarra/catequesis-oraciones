@@ -140,6 +140,14 @@ li .oracion-btn:nth-child(3) { animation-delay: 0.3s; }
   line-height: 1.6;
 }
 
+.libro-section {
+  display: none;
+}
+
+.libro-section.activo {
+  display: block;
+}
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;
