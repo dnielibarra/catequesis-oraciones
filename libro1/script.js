@@ -1,82 +1,111 @@
 // script.js
 
 const oraciones = {
-  cruz: {
-    titulo: "Señal de la Cruz",
-    texto: "Por la señal de la Santa Cruz,\nde nuestros enemigos líbranos Señor Dios nuestro.\nEn el nombre del Padre, del Hijo y del Espíritu Santo. Amén."
-  },
-  padrenuestro: {
-    titulo: "Padre Nuestro",
-    texto: "Padre nuestro que estás en el cielo,\nsantificado sea tu Nombre;\nvenga a nosotros tu reino;\nhágase tu voluntad en la tierra como en el cielo.\nDanos hoy nuestro pan de cada día;\nperdona nuestras ofensas,\ncomo también nosotros perdonamos a los que nos ofenden;\nno nos dejes caer en la tentación\ny líbranos del mal. Amén."
-  },
-  angel: {
-    titulo: "Ángel de la Guarda",
-    texto: "Ángel de mi guarda,\ndulce compañía,\nno me desampares\nni de noche ni de día.\nNo me dejes solo,\nque me perdería.\nHasta que descanse\nen los brazos de Jesús, José y María. Amén."
-  }
+  cruz: "En el nombre del Padre, del Hijo y del Espíritu Santo. Amén.",
+  padrenuestro: `Padre nuestro que estás en el cielo,
+santificado sea tu Nombre;
+venga a nosotros tu reino;
+hágase tu voluntad en la tierra como en el cielo.
+Danos hoy nuestro pan de cada día;
+perdona nuestras ofensas,
+como también nosotros perdonamos a los que nos ofenden;
+no nos dejes caer en la tentación,
+y líbranos del mal. Amén.`,
+  avemaria: `Dios te salve, María,
+llena eres de gracia,
+el Señor es contigo.
+Bendita tú eres entre todas las mujeres,
+y bendito es el fruto de tu vientre, Jesús.
+Santa María, Madre de Dios,
+ruega por nosotros, pecadores,
+ahora y en la hora de nuestra muerte. Amén.`,
+  angel: `Ángel de la guarda,
+mi dulce compañía,
+no me desampares
+ni de noche ni de día,
+hasta que me pongas
+en paz y alegría
+con todos los santos,
+Jesús, José y María. Amén.`,
+  gloria: `Gloria al Padre, al Hijo y al Espíritu Santo.
+Como era en el principio, ahora y siempre,
+por los siglos de los siglos. Amén.`,
+  credo: `Creo en un solo Dios, Padre todopoderoso,
+Creador del cielo y de la tierra,
+de todo lo visible y lo invisible...
+(versión completa aquí)`,
+  confieso: `Yo confieso ante Dios todopoderoso,
+y ante ustedes, hermanos,
+que he pecado mucho de pensamiento,
+palabra, obra y omisión...
+(versión completa aquí)`,
+  consagracion: `Oh Señora mía, oh Madre mía,
+yo me ofrezco enteramente a ti...
+(versión completa aquí)`,
+  mandamientos: `1. Amarás a Dios sobre todas las cosas
+2. No tomarás el nombre de Dios en vano
+...
+10. No codiciarás los bienes ajenos.`,
+  sacramentos: `1. Bautismo
+2. Confirmación
+3. Eucaristía
+4. Penitencia
+5. Unción de los enfermos
+6. Orden sacerdotal
+7. Matrimonio`,
+  virtudesTeologales: `Fe, Esperanza y Caridad.`,
+  virtudesCardinales: `Prudencia, Justicia, Fortaleza y Templanza.`,
+  mandamientosIglesia: `1. Oír misa entera todos los domingos y fiestas de guardar...
+(versión completa aquí)`,
+  contriccion: `Dios mío, me arrepiento de todo corazón de haberte ofendido...
+(versión corta)`,
+  salve: `Dios te salve, Reina y Madre de misericordia...
+(versión completa aquí)`,
+  amparo: `Bajo tu amparo nos acogemos,
+Santa Madre de Dios...
+(versión completa aquí)`,
+  alma: `Alma de Cristo, santifícame...
+(versión completa aquí)`,
+  comunion: `Creo, Jesús mío, que estás realmente presente...
+(versión completa aquí)`,
+  pecados: `1. Soberbia
+2. Avaricia
+3. Lujuria
+4. Ira
+5. Gula
+6. Envidia
+7. Pereza`,
+  confesion: `1. Examen de conciencia
+2. Dolor de los pecados
+3. Propósito de enmienda
+4. Confesión de los pecados al sacerdote
+5. Cumplir la penitencia`
 };
 
-function abrirModal(clave) {
-  const modal = document.getElementById("modal");
-  const data = oraciones[clave];
-  document.getElementById("modal-titulo").textContent = data.titulo;
-  document.getElementById("modal-texto").textContent = data.texto;
-  modal.style.display = "block";
-}
+const botones = document.querySelectorAll('.oracion-btn');
+const modal = document.getElementById('modal');
+const modalTitulo = document.getElementById('modal-titulo');
+const modalTexto = document.getElementById('modal-texto');
+const cerrar = document.querySelector('.close');
 
-function cerrarModal() {
-  document.getElementById("modal").style.display = "none";
-}
-
-// Swipe para ocultar
-let startX = 0;
-let isSwiping = false;
-let currentItem = null;
-
-function startSwipe(e) {
-  isSwiping = true;
-  currentItem = e.target.closest('.oracion-btn');
-  startX = e.touches ? e.touches[0].clientX : e.clientX;
-}
-
-function moveSwipe(e) {
-  if (!isSwiping || !currentItem) return;
-  let currentX = e.touches ? e.touches[0].clientX : e.clientX;
-  let diffX = currentX - startX;
-  currentItem.style.transform = `translateX(${diffX}px)`;
-}
-
-function endSwipe(e) {
-  if (!isSwiping || !currentItem) return;
-  let endX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
-  let diffX = endX - startX;
-
-  if (Math.abs(diffX) > 100) {
-    currentItem.classList.add('oculto');
-  } else {
-    currentItem.style.transform = 'translateX(0)';
-    if (Math.abs(diffX) < 10) {
-      abrirModal(currentItem.getAttribute('data-key'));
+botones.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key = btn.getAttribute('data-key');
+    const texto = oraciones[key];
+    if (texto) {
+      modalTitulo.textContent = btn.textContent;
+      modalTexto.textContent = texto;
+      modal.style.display = 'block';
     }
-  }
-
-  isSwiping = false;
-  currentItem = null;
-}
-
-window.onclick = function (event) {
-  const modal = document.getElementById("modal");
-  if (event.target === modal) cerrarModal();
-};
-
-// Asigna eventos a botones
-window.onload = function () {
-  document.querySelectorAll('.oracion-btn').forEach(btn => {
-    btn.ontouchstart = startSwipe;
-    btn.ontouchmove = moveSwipe;
-    btn.ontouchend = endSwipe;
-    btn.onmousedown = startSwipe;
-    btn.onmousemove = moveSwipe;
-    btn.onmouseup = endSwipe;
   });
-  document.querySelector('.close').onclick = cerrarModal;
-};
+});
+
+cerrar.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', e => {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+});
