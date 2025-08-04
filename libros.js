@@ -32,13 +32,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Agregar eventos swipe a todos los botones .oracion-btn
-document.querySelectorAll('.oracion-btn').forEach(btn => {
-  btn.addEventListener('touchstart', startSwipe);
-  btn.addEventListener('touchmove', moveSwipe);
-  btn.addEventListener('touchend', endSwipe);
-  btn.addEventListener('mousedown', startSwipe);
-  btn.addEventListener('mousemove', moveSwipe);
-  btn.addEventListener('mouseup', endSwipe);
-});
 
