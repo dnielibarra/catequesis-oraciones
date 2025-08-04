@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catequesis - Libro 1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Oraciones del Libro 1</h1>
+  </header>
+
+  <nav>
+    <button onclick="mostrarLibro('libro1')">Libro 1</button>
+    <button onclick="mostrarLibro('libro2')">Libro 2</button>
+    <button onclick="mostrarLibro('libro3')">Libro 3</button>
+    <button onclick="mostrarLibro('libro4')">Libro 4</button>
+    <button onclick="mostrarLibro('libro5')">Libro 5</button>
+    <button onclick="mostrarLibro('libro6')">Libro 6</button>
+    <button onclick="mostrarLibro('libro8')">Libro 8</button>
+    <button onclick="mostrarLibro('libro9')">Libro 9</button>
+    <button onclick="mostrarLibro('libro10')">Libro 10</button>
+  </nav>
+
+  <main>
+    <section id="libro1" class="active">
+      <button class="oracion-btn" data-key="cruz">Señal de la cruz</button>
+      <button class="oracion-btn" data-key="padrenuestro">Padre Nuestro</button>
+      <button class="oracion-btn" data-key="angel">Ángel de la guarda</button>
+    </section>
+
+    <!-- Secciones ocultas por ahora -->
+    <section id="libro2">
+      <button class="oracion-btn" data-key="cruz">Señal de la cruz</button>
+      <button class="oracion-btn" data-key="padrenuestro">Padre Nuestro</button>
+      <button class="oracion-btn" data-key="avemaria">Ave María</button>
+      <button class="oracion-btn" data-key="angel">Ángel de la guarda</button>
+    </section>
+
+    <section id="libro3">
+      <button class="oracion-btn" data-key="cruz">Señal de la cruz</button>
+      <button class="oracion-btn" data-key="padrenuestro">Padre Nuestro</button>
+      <button class="oracion-btn" data-key="avemaria">Ave María</button>
+      <button class="oracion-btn" data-key="angel">Ángel de la guarda</button>
+      <button class="oracion-btn" data-key="gloria">Gloria al Padre</button>
+    </section>
+
+    <!-- Puedes copiar y adaptar secciones similares para los demás libros -->
+  </main>
+
+  <div id="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-titulo"></h2>
+      <p id="modal-texto"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function mostrarLibro(id) {
+      document.querySelectorAll("main section").forEach((sec) => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+  </script>
+</body>
+</html>
